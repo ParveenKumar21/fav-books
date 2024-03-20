@@ -1,0 +1,48 @@
+.background {
+    height: 460px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../image/book-1283865_1280.jpg);
+    background-attachment: fixed;
+}
+
+.index {
+    width: 100%;
+    color: #2e393d;
+}
+
+.book-list {
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px 0;
+    margin: 15px 100px;
+    backdrop-filter: blur(20px);
+    color: #e0f4fb;
+}
+
+li {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.list-item {
+    display: block;
+    min-width: 120px;
+    max-width: fit-content;
+}
+
+.butn {
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.book {
+    text-decoration: none;
+    color: blue;
+}
+
+.book:hover {
+    background-color: #e0f4fb;
+}

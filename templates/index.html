@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Library</title>
+{% endblock %}
+
+{% block body %}
+
+<div style="margin-top: 100px; text-align: center;" class="index col-7 mx-auto">
+  <figure>
+    <blockquote class="blockquote">
+      <h1>My Library</h1>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      My <cite title="Source Title">Favourite Books</cite>
+    </figcaption>
+  </figure>
+  {% if books == []: %}
+  <p>Library is empty.</p>
+  {% endif %}
+  <div class="book-list">
+  <ul>
+    <li style="margin-bottom: 20px;">
+      <div class="list-item"><b>Book Name</b></div><div class="list-item"><b>Book Author</b></div><div class="list-item"><b>Book Ratiing</b></div>
+      <div style="color: transparent;">
+        <a class="butn">Delete</a>
+        <a class="butn">Edit Rating</a>
+      </div>
+    </li>
+    {% for book in books %}
+    <li>
+      <div class="list-item">{{book.title}}</div><div class="list-item">{{book.author}}</div><div class="list-item">{{book.rating}}/10</div>
+      <div>
+        <a class="butn book" href="{{ url_for('delete', id=book.id) }}">Delete</a>
+        <a class="butn book" href="{{ url_for('edit', id=book.id) }}">Edit Rating</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <a class="butn book" href="{{ url_for('add_book') }}">Add new book</a>
+</div>
+</div>
+
+  {% endblock %}

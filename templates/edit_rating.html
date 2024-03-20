@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Edit Rating</title>
+{% endblock %}
+
+{% block link %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<form action="{{ url_for('edit') }}" method="post">
+    <div style="text-align: center; margin-top: 150px">
+        <p>Book Name: {{ book.title }}</p>
+        <p>Book Rating: {{ book.rating }}</p>
+        <input hidden="hidden" name="id" value="{{ book.id }}">
+        <div class="form-floating mb-3 mx-auto col-6">
+            <input name="rating" type="number" min="0" max="10" step="0.1" class="form-control" id="floatingInput" placeholder="New Rating">
+            <label for="floatingInput">New rating</label>
+        </div>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <button class="btn btn-primary" type="submit">Change Rating</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
